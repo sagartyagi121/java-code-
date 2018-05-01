@@ -28,3 +28,16 @@ public class TimeStampExample {
     }
 
 }
+
+
+try {
+  FileWriter fw = new FileWriter("myOutFile.txt");
+  fw.write("Example of content");
+  fw.close();
+} catch (FileNotFoundException e) {
+  // File not found
+  e.printStackTrace();
+} catch (IOException e) {
+  // Error when writing to the file
+  e.printStackTrace();
+}
