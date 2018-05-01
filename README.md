@@ -29,6 +29,11 @@ public class TimeStampExample {
 
 }
 
+SimpleDateFormat sdf = new SimpleDateFormat("ddMMyyyy_hhmmss");
+Date curDate = new Date();
+String strDate = sdf.format(curDate);
+
+
 
 try {
   FileWriter fw = new FileWriter("myOutFile.txt");
