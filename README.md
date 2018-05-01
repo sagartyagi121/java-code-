@@ -1,15 +1,30 @@
 # java-code-
-try {
-  File fout = new File("myOutFile.txt");
-  FileOutputStream fos = new FileOutputStream(fout);
-  BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));
-  bw.write("Write somthing to the file ...");
-  bw.newLine();
-  bw.close();
-} catch (FileNotFoundException e){
-  // File was not found
-  e.printStackTrace();
-} catch (IOException e) {
-  // Problem when writing to the file
-  e.printStackTrace();
+
+
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class TimeStampExample {
+
+    private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss");
+
+    public static void main(String[] args) {
+
+        //method 1
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        System.out.println(timestamp);
+
+        //method 2 - via Date
+        Date date = new Date();
+        System.out.println(new Timestamp(date.getTime()));
+
+        //return number of milliseconds since January 1, 1970, 00:00:00 GMT
+        System.out.println(timestamp.getTime());
+
+        //format timestamp
+        System.out.println(sdf.format(timestamp));
+        
+    }
+
 }
